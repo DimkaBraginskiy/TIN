@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Validator</title>
+    <link rel="stylesheet" href="/stylesheets/TaskBCstyles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <h3>Hiii! Please enter those fields down there</h3>
+    </div>
+
+    <% if (errors.length > 0) { %>
+        <div class="error" style="margin-bottom: 15px;">
+            <ul>
+                <% errors.forEach(err => { %>
+                    <li><%= err %></li>
+                <% }) %>
+            </ul>
+        </div>
+    <% } %>
+
+    <div class="taskAForm">
+
+
+        <form action="/taskBC/submit" method="POST">
+
+
+            <div class="field">
+                <label for="phoneNumber">Phone Number:</label>
+                <input
+                        type="text"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="+123 456 789 123"
+                        value="<%= formData.phoneNumber || '' %>"
+                        required>
+            </div>
+
+
+
+            <div class="field">
+                <label for="fullname">Full Name:</label>
+                <input
+                        type="text" id="fullname" name="fullname" placeholder="John Doe" value="<%= formData.fullname || '' %>"
+                        required>
+            </div>
+
+            <div class="field">
+                <label for="text">Additional Text:</label>
+                <input
+                        type="text"
+                        id="text"
+                        name="text"
+                        placeholder="Your message here..."
+                        value="<%= formData.text || '' %>"
+                        required>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div class="footer">
+        nice footer))))
+    </div>
+</div>
+</body>
+</html>

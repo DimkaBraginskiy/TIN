@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'Madie Roger';
+    src: url('public/fonts/tin02/Madie Roger.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dialog Italic';
+    src: url('public/fonts/tin02/Dialog Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+.container{
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "images text"
+    "footer footer";
+    grid-template-columns: 300px 1fr; /*fr - fraction unit. Uses left space proportionally.*/
+    grid-template-rows: auto 1fr auto;
+    gap: 20px; /* gap between tiles of layout */
+    background-color: #ffffff;
+    margin: 0 auto; /* centering: not that big difference.... */
+    padding: 30px;
+}
+
+.container > div {
+    background-color: #ffffff;
+}
+
+.container > div.header{
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: black;
+    text-shadow:  0.5px 0.5px #8cef4e;
+    color: white;
+
+    letter-spacing: 1px;
+    font-size: 20px;
+
+    font-family: "Madie Roger", monospace;
+    font-style: normal;
+
+    grid-area: header;
+    text-align: center;
+}
+
+.container > div.text{
+    font-size: 18px;
+    line-height: 1.5;
+
+    column-width: 300px;
+    column-gap: 10px;
+    column-fill: balance;
+
+    text-align: left; /* makes the text more to be to the left it's line boundaries (300 column width as minimum */
+    hyphens: auto;
+
+
+}
+
+.pquote{
+    font-family: 'Dialog Italic', monospace;
+    float: left;
+    width: 200px;
+    background: #bbf6b6;
+    font-weight: bold;
+    padding: 13px;
+    margin: 0 13px 13px 0;
+    font-style: italic;
+}
+
+blockquote{
+    margin: 0;
+}
+
+.floatedImage{
+    float: left;
+    width: 200px;
+    background: #bbf6b6;
+    font-weight: bold;
+    padding: 13px; /* makes a free space around the image corners*/
+    margin: 0 13px 13px 0; /* makes an even spacing between edge of image and text */
+}
+
+.container > div.footer{
+    grid-area: footer;
+    text-align: center;
+}
+
+.headerImage{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    rotate: 10deg;
+    border-radius: 10%;
+    box-shadow: 7px 7px #283323;
+}
+
+.leftImage{
+    width: 220px;
+    height: 300px;
+    border-radius: 2%;
+    display: block; /*Each image is in a single row */
+}
+
+article::after { /* optional but let it be for best practices... */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:  /* now just completely vertical alignment */
+            "header"
+            "text"
+            "images"
+            "footer";
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .container > div.text {
+        column-count: 1; /* setting a Single column */
+        column-width: auto;
+    }
+
+
+    .floatedImage,
+    .pquote {
+        float: none; /* setting to none as may break everythin... */
+        width: 100%;
+        margin: 20px 0;
+        box-sizing: border-box;
+    }
+
+
+    .floatedImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Adjust header font size for mobile */
+    .container > div.header {
+        font-size: 18px;
+    }
+}

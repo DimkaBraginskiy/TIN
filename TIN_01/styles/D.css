@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('assets/fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aktifo-A Black';
+    src: url('assets/fonts/Aktifo-A-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background-color: #ececec;
+    font-size: 15px;
+    font-family: "Aktifo-A Black", monospace;
+}
+
+.pass{
+    background-color: #c1ffc3;
+}
+
+.pass_label{
+    background-color: #d6baff;
+}
+
+a{
+    color: #3a2b2b;
+    text-decoration: none;
+}

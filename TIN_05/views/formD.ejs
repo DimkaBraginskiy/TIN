@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixel Rendering Speed Calculator</title>
+    <link rel="stylesheet" href="/stylesheets/TaskBCstyles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <h3>Pixel Rendering Speed Calculator</h3>
+    </div>
+
+    <form action="/taskD/calculate" method="POST">
+        <div class="field">
+
+            <label for="resolution">Screen Resolution:</label>
+            <input type="text" id="resolution" name="resolution" placeholder="1920x1080" value="<%= formData.resolution || '' %>" required>
+        </div>
+
+        <div class="field">
+            <label for="refreshRate">Refresh Rate (Hz):</label>
+            <input type="number" id="refreshRate" name="refreshRate" placeholder="144 (Hz)" value="<%= formData.refreshRate || '' %>" required>
+
+        </div>
+
+        <div class="field">
+            <label for="colorDepth">Color Depth (bits):</label>
+            <input type="number" id="colorDepth" name="colorDepth" placeholder="8 (for 8 bits, etc...)" value="<%= formData.colorDepth || '' %>" required>
+        </div>
+
+        <% if (errors.length > 0) { %>
+            <div class="error">
+                <ul>
+                    <% errors.forEach(function(err) { %>
+                        <li><%= err %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        <% } %>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    <div class="footer">
+        nice footer)))
+    </div>
+</div>
+</body>
+</html>

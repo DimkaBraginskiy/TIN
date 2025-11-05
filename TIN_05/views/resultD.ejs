@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixel Rendering Result</title>
+    <link rel="stylesheet" href="/stylesheets/TaskBCstyles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <h3>Calculation Results</h3>
+    </div>
+
+    <div class="success-message">
+        <p><strong>Resolution:</strong> <%= resolution %></p>
+        <p><strong>Refresh Rate:</strong> <%= refreshRate %> Hz</p>
+        <p><strong>Color Depth:</strong> <%= colorDepth %> bits</p>
+        <hr>
+        <p><strong>Total Pixels per Frame:</strong> <%= totalPixels %></p>
+        <p><strong>Pixels Rendered per Second:</strong> <%= pixelsPerSecond %></p>
+        <p><strong>Bits Processed per Second:</strong> <%= bitsPerSecond %></p>
+    </div>
+
+    <form action="/taskD" method="GET">
+        <input type="submit" id="resetBtn" value="Calculate Again">
+    </form>
+
+    <div class="footer">
+        nice footer)))
+    </div>
+</div>
+</body>
+</html>

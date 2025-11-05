@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e4e4e4;
+    color: #151515;
+}
+
+.header h3{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wrapper{
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.header h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.field label{
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #151515;
+}
+
+input{
+    padding: 10px 12px;
+    border-radius: 15px;
+    border: 1px solid;
+    font-size: 1em;
+    transition: border-color 0.5s, box-shadow 0.5s, background-color 0.5s;
+}
+
+input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 6px rgba(74,144,226,0.4);
+    outline: none;
+}
+
+input[type="submit"] {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+    box-shadow: 0 0 6px rgba(74,144,226,0.4);
+}
+
+.error {
+    display: inline-block;
+    background-color: #ffe6e6;
+    color: #b30000;
+    padding: 6px 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.error:empty {
+    display: none;
+}
+
+.success-message {
+    display: block;
+    background-color: #e6ffe6;
+    color: #006600;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    white-space: pre-line; /* This will respect your \n line breaks */
+}
+
+.success-message:empty {
+    display: none;
+}
+
+.footer{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.70em;
+    color: #636363;
+}
+
+#resetBtn {
+    background: #f8f9fa;
+    color: #495057;
+    border: 1px solid #ced4da;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+#resetBtn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+#resetBtn:active {
+    background: #dee2e6;
+    transform: translateY(1px);
+}
