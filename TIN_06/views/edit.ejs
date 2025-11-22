@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Vehicle</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<h1>Edit Vehicle</h1>
+
+<% if (errors.length > 0) { %>
+    <ul class="error-list">
+        <% errors.forEach(err => { %>
+            <li><%= err %></li>
+        <% }) %>
+    </ul>
+<% } %>
+
+<form action="/vehicles/edit/<%= vehicle.id %>" method="POST">
+
+    <label>Model:</label>
+    <input type="text" name="model" value="<%= vehicle.model %>" required><br>
+
+    <label>Year:</label>
+    <input type="number" name="year" value="<%= vehicle.year %>" required><br>
+
+    <label>Price:</label>
+    <input type="number" name="price" value="<%= vehicle.price %>" required><br>
+
+    <label>Brand:</label>
+    <select name="brand_id" required>
+        <% brands.forEach(brand => { %>
+            <option value="<%= brand.id %>" <%= brand.id == vehicle.brand_id ? "selected" : "" %>>
+                <%= brand.name %>
+            </option>
+        <% }) %>
+    </select><br>
+
+    <button type="submit">Save Changes</button>
+</form>
+
+<a href="/vehicles">Cancel</a>
+
+</body>
+</html>
