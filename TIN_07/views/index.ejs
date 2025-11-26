@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Validator</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<div class="wrapper" id="wrapper">
+  <div class="header">
+    <h3>Field inputting page</h3>
+  </div>
+
+  <form id="userForm">
+    <div class="field">
+      <label for="username">User name:</label>
+      <input type="text" id="username" placeholder="username"><br>
+      <span id="usernameError" class="error"></span>
+    </div>
+
+    <div class="field">
+      <label for="birthdate">Birth date:</label>
+      <input type="date" id="birthdate"><br>
+      <span id="birthdateError" class="error"></span>
+    </div>
+
+    <div class="field">
+      <label for="email">Email:</label>
+      <input type="text" id="email" placeholder="nice@gmail.com"><br>
+      <span id="emailError" class="error"></span>
+    </div>
+
+    <div class="field">
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Password"> <!-- Changed type to "password" -->
+      <span id="passwordError" class="error"></span>
+    </div>
+
+    <button type="submit">Submit Form</button>
+  </form>
+
+
+  <div id="successMessage" class="success-message"></div>
+
+  <div id="profileCard" style="display: none; margin-top: 30px;">
+    <div style="padding: 20px; background: #f0f8ff; border-radius: 10px; border: 1px solid #4a90e2;">
+      <h4 id="welcomeTitle">Welcome!</h4>
+      <p><strong>Logged in as:</strong> <span id="displayEmail"></span></p>
+      <p><strong>Age:</strong> <span id="displayAge"></span></p>
+    </div>
+  </div>
+
+  <button type="button" id="resetBtn" style="margin-top: 15px; background: #ccc;">Reset</button>
+</div>
+
+<div class="footer">
+  nice footer
+</div>
+
+
+<script src="/js/frontValidator.js"></script>
+
+</body>
+</html>
